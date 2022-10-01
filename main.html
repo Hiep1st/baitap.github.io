@@ -9,14 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     
     <title>Vi_Du_HTML_CSS</title>
+    <link rel="icon"  type="img/x-icon" href="25231.ico">
  
 </head>
 <body >
     <div id="wrapper">
         <header>
+            <div id="toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <div id="head" class="container">
+                
                 <nav >
-                   <a href="" id="logo">
+                   <a href="#" id="logo">
                     <img src="logo.png" alt="Hổ Cute">
                     </a>
                     <ul id="main-menu">
@@ -93,7 +98,46 @@
         </div>
 
     </div>
-   
+    <div id="backtop">
+        <i class="fa-solid fa-angle-up"></i>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function(){
+                if($(this).scrollTop()){
+                $('header').addClass('sticky');
+            }
+            else{
+                $('header').removeClass('sticky');
+            }
+            });
+        });
+        $(document).ready(function() {
+            $(window).scroll(function(){
+                if($(this).scrollTop()){
+                $('#backtop').fadeIn();
+            }
+            else{
+                $('#backtop').fadeOut();
+            }
+            });
+            $('#backtop').click(function() {
+                $('html,body').animate({
+                    scrollTop:0
+                },1000);
+            });
+
+        });
+        $(document).ready(function() {
+            $('#toggle').click(function() {
+                $('nav').slideToggle();
+            });
+            
+        });
+        
+    </script>
+    
 
 </body>
 </html>

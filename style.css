@@ -14,10 +14,27 @@ body{
 }
 header{
     position: fixed;
-    background-color: #1f2022ce;
+    background-color: #1f20229d;
     top:0px;
     left:0px;
     width: 100%;
+    transition:all 0.5s ease-in-out;
+}
+header.sticky{
+    background:#0a0a0aea;
+    opacity: 0.9;
+    padding: 10px 0px;
+    box-shadow: 0px 5px 15px rgb(222, 233, 222) ;
+}
+header.sticky #main-menu a{
+    color:rgba(86, 245, 71, 0.877);
+}
+header.sticky #logo img{
+    max-width: 40px;
+    height: auto;
+    
+    border-radius: 20px;
+    border: 1px solid rgba(4, 241, 4, 0.555);
 }
 nav{
     display: flex;
@@ -40,7 +57,7 @@ nav{
    
 }
 #logo img:hover{
-    background-color:  rgba(4, 241, 4, 0.486);;
+    background-color:  rgba(4, 241, 4, 0.486);
 }
 #main-menu{
     display: flex;
@@ -204,7 +221,7 @@ nav{
 .lgo img{
     max-width: 100px;
     height: auto;
-    border-radius: 50px;
+    border-radius: 50%;
     border: 3px solid rgba(4, 241, 4, 0.555);
 }
 #icon{
@@ -249,4 +266,46 @@ nav{
 }
 #chan #icon{
     padding-top: 20px;
+}
+#backtop {
+    font-size: 25px;
+    width:50px;
+    height: 50px;
+    background-color: rgba(19, 17, 17, 0.815);
+    color:rgba(4, 241, 4, 0.555);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+}
+#toggle{
+    display: none;
+    background-color:rgba(33, 34, 34, 0.87) ;
+    color:  rgba(22, 172, 22, 0.473);
+    text-align: right;
+    padding: 10px ;
+    font-size: 20px;
+    cursor: pointer;
+}
+#toggle:hover{
+    color:rgba(4, 241, 4, 0.555);
+}
+@media screen and (max-width:768px) {
+    #logo{
+        display:none;
+    }
+    nav {
+        display: none;
+    }
+    #main-menu{
+        flex-direction: column;
+        text-align: center;
+    }
+    #toggle{
+        display: block;
+    }
 }
